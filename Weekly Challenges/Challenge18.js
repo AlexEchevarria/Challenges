@@ -29,7 +29,7 @@ const matriz1 = [
 const matriz2 = [
     ["X", "O", "O"],
     ["O", "O", "X"],
-    ["X", "O", "X"]
+    ["X", "", "X"]
 ];
 const matriz3 = [
     ["X", "O", "O"],
@@ -87,6 +87,8 @@ const whoWon = (matriz) => {
     
     if (whoWin == "O WinX Win") whoWin = "Draw ";
     whoWin = whoWin.substring(0, 5);
+    if (whoWin == "") return "Any value is missing on matrix";
+
 
     return whoWin;
 }
