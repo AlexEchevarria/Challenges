@@ -16,9 +16,9 @@
  */
 
 
-const result = ((days, hours, minutes, seconds) => {
+const getTime = ((days, hours, minutes, seconds) => {
     return days * 24 * 60 * 60 * 1000 + hours * 60 * 60 * 1000 + minutes * 60 * 1000 + seconds * 1000;
 });
 
-console.log(result(1,2,3,4));
+console.log(getTime(1,2,3,4));
 // 93784000 ms
