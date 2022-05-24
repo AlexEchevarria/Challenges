@@ -45,9 +45,9 @@ if (extension (file) == "txt"){
             if (signo != "") result = eval(value1 + signo + value2);
             if (result != 0) value1 = result; signo = ""; value2 = 0;
 
-        }else{
-            signo = line;
         }
+
+        if (line == "+" || line == "-" || line == "*" || line == "/") signo = line;
 
         if (lastLine) console.log(result)
 
