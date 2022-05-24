@@ -22,7 +22,41 @@
  */
 
 
-let fr = new FileReader();
-let data = fr.readAsText("Challenge21data.txt");
+const lineReader = require('line-reader');
 
-console.log(data);
+const file = "Challenge21data.txt";
+//Control de formato
+const extension = (fileName) => {
+    return fileName.split('.').pop();
+}
+
+let result = 0, value1 = 0, value2 = 0;
+let signo = "";
+
+if (extension (file) != "txt") console.error("Error: Formato de archivo incorrecto"); 
+if (extension (file) == "txt"){
+    
+    lineReader.eachLine(file, (line, lastLine) => {
+        
+        if (parseInt(line) || parseFloat(line)){
+            
+            if (value1 == 0) value1 = line;
+            if (value1 != 0 && value2 == 0 && signo != "") value2 = line;
+            if (signo != "") result = eval(value1 + signo + value2);
+            if (result != 0) value1 = result; signo = ""; value2 = 0;
+
+        }else{
+            signo = line;
+        }
+
+        if (lastLine) console.log(result)
+
+    });
+
+}
+
+
+
+
+
+
