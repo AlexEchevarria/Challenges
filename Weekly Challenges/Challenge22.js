@@ -22,9 +22,9 @@ let sets = (arr1, arr2, boolValue) => {
     
     if(boolValue){
         
-        let newArray = arr1.filter(word => {
-            return arr2.includes(word);
-        })
+        let newArray = arr1.filter(word =>
+            arr2.includes(word)
+        )
         return newArray;
 
     }else{
@@ -32,16 +32,16 @@ let sets = (arr1, arr2, boolValue) => {
         /* Con los 2 filter, manejamos los elementos que sean diferentes.
          * si por ejemplo no ponemos el newArray2, sólo aparece el 1 y faltaría el 4.
         */
-        let newArray = arr1.filter(word => {
-            return !arr2.includes(word);
-        })
-        let newArray2 = arr2.filter(word => {
-            return !arr1.includes(word);
-        })
+        let newArray = arr1.filter(word => 
+            !arr2.includes(word)
+        )
+        let newArray2 = arr2.filter(word =>
+            !arr1.includes(word)
+        )
 
         return newArray.concat(newArray2);
     }
 
 }
 
-console.log(sets([1,2,3], [2,3,4] , 0));
+console.log(sets([1,2,3], [2,3,4] , 1));
