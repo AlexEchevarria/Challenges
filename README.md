@@ -1,2 +1,2 @@
 # Challenges
-Weekly and Montly Challenges from MoureDev
+Weekly and Montly Challenges from @MoureDev
